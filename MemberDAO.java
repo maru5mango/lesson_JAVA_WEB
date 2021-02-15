@@ -21,6 +21,9 @@ public class MemberDAO {
 		try {
 			connDB(); //driver, url, user, pwd로 데이터 베이스를 연결한다.
 			String query = "select * from t_member ";
+// 			prepareStatement()를 이용하면SQL문을 미리 컴파일하여 사용하므로 속도가 더 빠르다.
+// 			pstmt=con.prepareStatement(query);
+// 			ResultSet rs= pstmt.executeQuery();
 			ResultSet rs = stmt.executeQuery(query);// SQL문으로 회원 정보를 조회한다.
 			while (rs.next()) {
 				//조회한 결과의 각 칼럼값을 받아온다.
